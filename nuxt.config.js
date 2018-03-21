@@ -53,7 +53,7 @@ module.exports = {
       },
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'icon', type: 'image/x-icon', href: 'https://xe.vatgia.com/assets/favicon/apple-icon-57x57.png'},
       {
         rel: 'stylesheet',
         type: 'text/css',
