@@ -14,31 +14,23 @@ module.exports = {
         , {
           name: 'custom',
           path: '*',
-          component: resolve( 'pages/error.vue')
+          component: resolve( 'layouts/error.vue')
         })
     }
   },
   env:{
     meta:[
-      {'google_id':'34234532452345'},
-      {'facebook_id':'43523452345'}
+      {'name_node':'value_node'}
     ],
   },
   css: [
     '@/assets/css/style.css',
     '@/assets/css/style_all.css'
   ],
-  modules: [
-    // '@/modules/js_all.js'
-  ],
-  // plugins: [
-  //   '~/plugins/js_all.js'
+  // modules: [
+  //   '@/modules/js_all.js'
   // ],
 
-  // route
-  /*
-  ** Headers of the page
-  */
   loading: '~/components/Loading/Loading.vue',
   head: {
     title: 'demo-nuxtjs',
@@ -89,7 +81,7 @@ module.exports = {
     }
   },
   build: {
-    vendor: ['axios','jquery'],
+    vendor: ['axios'],
     /*
     ** Run ESLint on save
     */
