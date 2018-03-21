@@ -1,8 +1,14 @@
 <template>
   <div>
+    <no-ssr>
     <head-page :feature="head_page"></head-page>
+    </no-ssr>
+    <no-ssr>
     <page-name></page-name>
+    </no-ssr>
+    <no-ssr>
     <page-home></page-home>
+    </no-ssr>
   </div>
 </template>
 <script>
