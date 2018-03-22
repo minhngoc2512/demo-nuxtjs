@@ -1,9 +1,3 @@
-const { detect } = require('detect-browser');
-const browser = detect();
-const useragent = require('http');
-const useragent3 = null;
-
-
 module.exports = {
   router: {
     extendRoutes(routes, resolve) {
@@ -20,18 +14,13 @@ module.exports = {
         , {
           name: 'custom',
           path: '*',
-          component: resolve( 'layouts/error.vue')
+          component: resolve( 'layouts/Error.vue')
         })
     }
   },
   env:{
     meta:[
-      {'name_node':'value_node'},
-      {'useragent' : browser},
-      {'useragent2':useragent},
-      {
-        'useragent3': ''
-      }
+      {'name_node':'value_node'}
     ]
   },
   css: [
