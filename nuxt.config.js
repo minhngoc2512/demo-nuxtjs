@@ -11,11 +11,12 @@ module.exports = {
           path: '/:category',
           component: resolve( '~/pages/Category/Category.vue')
         }
-        , {
-          name: 'custom',
-          path: '*',
-          component: resolve( '~/layouts/Error.vue')
-        })
+        // , {
+        //   name: 'custom',
+        //   path: '*',
+        //   component: resolve( '~/layouts/Error.vue')
+        // }
+        )
     }
   },
   env:{
