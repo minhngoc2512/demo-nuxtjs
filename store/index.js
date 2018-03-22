@@ -3,11 +3,11 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      counter: 0
+      status_ssr:false
     },
     mutations: {
-      increment(state) {
-        state.counter++
+      changeStatusSsr (state) {
+        state.status_ssr=true;
       }
     }
   })

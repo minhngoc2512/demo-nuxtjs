@@ -1,12 +1,21 @@
 <template>
   <div>
-    <no-ssr>
-      <app-header></app-header>
-    </no-ssr>
-      <nuxt/>
-    <no-ssr>
-      <app-footer></app-footer>
-    </no-ssr>
+    <div v-if="$store.state.status_ssr">
+        <app-header></app-header>
+        <nuxt/>
+        <app-footer></app-footer>
+    </div>
+    <div v-if="$store.state.status_ssr===false">
+      <no-ssr>
+        <app-header></app-header>
+      </no-ssr>
+      <no-ssr>
+        <nuxt/>
+      </no-ssr>
+      <no-ssr>
+        <app-footer></app-footer>
+      </no-ssr>
+    </div>
   </div>
 </template>
 <script>
@@ -14,6 +23,14 @@
   import Footer from "@/components/Footer/Footer.vue";
 
   export default {
+    middleware: 'demo',
+    data(){
+      return{
+      }
+    },
+    mounted(){
+      console.log(this.$store.state.status_ssr);
+    },
     components: {
       appHeader: Header,
       appFooter: Footer

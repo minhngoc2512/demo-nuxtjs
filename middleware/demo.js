@@ -1,5 +1,8 @@
-export default function ({ store, redirect , route}) {
-  // If the user is not authenticated
-  // return redirect('/')
-  console.log('running middleware!')
+
+export default function ({ store, redirect , route,req}) {
+
+  if(req.headers['user-agent']==='Googlebot/2.1 (+http://www.googlebot.com/bot.html)'){
+    store.commit('changeStatusSsr');
+  }
+
 }
