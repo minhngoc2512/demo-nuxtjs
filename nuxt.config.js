@@ -5,16 +5,16 @@ module.exports = {
         {
           path: '/',
           name: 'Home',
-          component: resolve( 'pages/Home/Home.vue')
+          component: resolve( '~/pages/Home/Home.vue')
         },
         {
           path: '/:category',
-          component: resolve( 'pages/Category/Category.vue')
+          component: resolve( '~/pages/Category/Category.vue')
         }
         , {
           name: 'custom',
           path: '*',
-          component: resolve( 'layouts/Error.vue')
+          component: resolve( '~/layouts/Error.vue')
         })
     }
   },
