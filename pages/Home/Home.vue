@@ -11,6 +11,7 @@
 // import PageName from "@/components/PageName/PageName.vue";
 // import PageHome from "@/components/PageHome/PageHome.vue";
 // import Header from "@/components/Header/Header.vue";
+
 export default {
     // components:{
     //   appHeader: Header

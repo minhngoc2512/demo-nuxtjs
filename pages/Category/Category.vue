@@ -12,16 +12,26 @@
   </div>
 </template>
 <script>
-  let axios = require('axios')
+  let axios = require('axios');
+  let http = require('http');
   import HeadPage from "@/components/HeadPage/HeadPage.vue";
   import PageName from "@/components/PageName/PageName.vue";
   import PageHome from "@/components/PageHome/PageHome.vue";
-
+  const {detect} = require('detect-browser');
+  const browser = detect();
   export default {
     middleware: 'demo',
     name: 'Category',
     asyncData() {
       return new Promise((res) => {
+        // console.log(browser);
+        console.log(this);
+        // var server = http.createServer(function(req, res){
+        //
+        //   var userAgent = req.headers['user-agent'];
+        //   console.log(userAgent)
+        //
+        // });
         setTimeout(function () {
           res();
         }, 1000)
@@ -50,7 +60,10 @@
       getDatacategory() {
         this.route = this.$route.params.category;
         let category = this.route;
-        console.log(process.env.meta)
+        console.log(process.env.meta);
+
+        console.log(navigator);
+        console.log(browser);
         axios.get('https://xe.vatgia.com/api/rewrites/' + category).then(response => {
           this.head_page = response.data.vehilce_feature;
         })

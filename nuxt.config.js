@@ -1,3 +1,9 @@
+const { detect } = require('detect-browser');
+const browser = detect();
+const useragent = require('http');
+const useragent3 = null;
+
+
 module.exports = {
   router: {
     extendRoutes(routes, resolve) {
@@ -20,8 +26,13 @@ module.exports = {
   },
   env:{
     meta:[
-      {'name_node':'value_node'}
-    ],
+      {'name_node':'value_node'},
+      {'useragent' : browser},
+      {'useragent2':useragent},
+      {
+        'useragent3': ''
+      }
+    ]
   },
   css: [
     '@/assets/css/style.css',
