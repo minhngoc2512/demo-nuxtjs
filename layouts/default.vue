@@ -28,7 +28,6 @@
       }
     },
     mounted(){
-      console.log(this.$store.state.status_ssr);
     },
     components: {
       appHeader: Header,

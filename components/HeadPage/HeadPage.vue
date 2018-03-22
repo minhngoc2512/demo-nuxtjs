@@ -122,7 +122,6 @@
     },
     methods: {
       getData() {
-        console.log(this.feature);
       }
     }
   };
