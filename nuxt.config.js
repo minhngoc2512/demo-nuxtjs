@@ -32,7 +32,11 @@ module.exports = {
   //   '@/modules/js_all.js'
   // ],
 
-  loading: '~/components/Loading/Loading.vue',
+  // loading: '~/components/Loading/Loading.vue',
+  loading: {
+    color: 'red',
+    height: '2px'
+  },
   head: {
     title: 'demo-nuxtjs',
     meta: [

@@ -12,6 +12,13 @@
   import PageHome from "@/components/PageHome/PageHome.vue";
   export default {
     name: 'Category',
+    asyncData() {
+      return new Promise((resolve) => {
+        setTimeout(function () {
+          resolve({})
+        }, 1000)
+      })
+    },
     data() {
       return {
         head_page: null,
@@ -30,6 +37,11 @@
     },
     mounted() {
       this.getDatacategory();
+      this.$nextTick(() => {
+        this.$nuxt.$loading.start()
+
+        setTimeout(() => this.$nuxt.$loading.finish(), 500)
+      })
     },
     methods: {
       getDatacategory() {
