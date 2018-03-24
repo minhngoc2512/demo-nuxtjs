@@ -21,13 +21,25 @@
 <script>
   import Header from "@/components/Header/Header.vue";
   import Footer from "@/components/Footer/Footer.vue";
+  let axios = require('axios')
   export default {
     middleware: 'demo',
     data(){
       return{
+
       }
     },
     mounted(){
+        this.getData();
+    },
+    methods:{
+      getData(){
+          axios
+            .get("https://xe.vatgia.com/api/navigation")
+            .then(response => {
+            this.$store.commit('changeDataMenu',{data:response.data.data});
+            });
+      }
     },
     components: {
       appHeader: Header,

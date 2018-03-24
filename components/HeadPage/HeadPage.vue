@@ -97,7 +97,7 @@
           <div class="item" v-for="item_feature in feature" :key="item_feature.id">
             <div class="card">
               <a class="img" :title="item_feature.name" :href="'/'+item_feature.link_web">
-                <img onerror="noimage(this)" :alt="item_feature.name" :src="item_feature.photo.sm">
+                <img onerror="noimage(this)" :alt="item_feature.name" :src="item_feature.photo != null?item_feature.photo.sm:item_feature.no_photo">
               </a>
               <h3><a itemprop="url" :href="'/'+item_feature.link_web" :title="item_feature.name" class="name"><span
                 itemprop="name">{{item_feature.name}}</span></a></h3>

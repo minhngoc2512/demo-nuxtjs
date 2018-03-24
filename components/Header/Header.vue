@@ -71,7 +71,7 @@
                 <nav class="nav-header-v2">
                     <ul class="navbar" >
 
-                        <li v-for="item_menu in menu" :key="item_menu.id">
+                        <li v-for="item_menu in $store.state.data_menu" :key="item_menu.id">
                             <router-link :to="item_menu.link_web" class="name" :title="item_menu.title">{{item_menu.title}}</router-link>
                         </li>
                     </ul>
@@ -91,16 +91,9 @@ export default {
     };
   },
   mounted() {
-    this.getMenu();
   },
   methods: {
-    getMenu() {
-      axios
-        .get("https://xe.vatgia.com/api/navigation")
-        .then(response => {
-          this.menu = response.data.data;
-        });
-    }
+
   }
 };
 </script>

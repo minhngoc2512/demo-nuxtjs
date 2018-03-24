@@ -8,14 +8,19 @@ module.exports = {
           component: resolve( '~/pages/Home/Home.vue')
         },
         {
+          name: 'not found',
+          path: '/error/404',
+          component: resolve( '~/components/Error/Error.vue')
+        },
+        {
           path: '/:category',
           component: resolve( '~/pages/Category/Category.vue')
         }
-        // , {
-        //   name: 'custom',
-        //   path: '*',
-        //   component: resolve( '~/layouts/Error.vue')
-        // }
+        , {
+          name: 'error',
+          path: '*',
+          component: resolve( '~/components/Error/Error.vue')
+        }
         )
     }
   },
@@ -67,9 +72,10 @@ module.exports = {
         href: 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,700i,800&amp;amp;subset=vietnamese'
       }
     ],
-    script: [
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js' }
-    ],
+    // script: [
+    //   { src: './assets/js/jquery.min.js' },
+    //   { src: './assets/js/js_all.js' }
+    // ],
   },
 
   /*

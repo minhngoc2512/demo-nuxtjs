@@ -4,7 +4,8 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       status_ssr:false,
-      status_check:false
+      status_check:false,
+      data_menu: null,
     },
     mutations: {
       changeStatusSsr (state) {
@@ -12,6 +13,9 @@ const createStore = () => {
       },
       changeStatusCheck(state){
         state.status_check=true;
+      },
+      changeDataMenu(state,payload){
+        state.data_menu = payload.data
       }
     }
   })

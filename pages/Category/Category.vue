@@ -11,6 +11,11 @@
   import PageName from "@/components/PageName/PageName.vue";
   import PageHome from "@/components/PageHome/PageHome.vue";
   export default {
+    // layout:'layouts_demo',
+    validate ({ store,params }) {
+      // Must be a number
+      return true;
+    },
     name: 'Category',
     asyncData() {
       return new Promise((resolve) => {
@@ -22,7 +27,8 @@
     data() {
       return {
         head_page: null,
-        route: this.$route
+        route: this.$route,
+        meta: []
       }
     },
     components: {
@@ -49,9 +55,19 @@
         let category = this.route;
         axios.get('https://xe.vatgia.com/api/rewrites/' + category).then(response => {
           this.head_page = response.data.vehilce_feature;
+          if(this.head_page==null){
+            window.location.href= '/error/404';
+          }
+          this.meta = response.data.meta;
+        }).catch(function(error){
+          window.location= '/error/404';
         })
-
       }
     },
+    head () {
+      return {
+        meta: this.meta
+      }
+    }
   }
 </script>

@@ -13,6 +13,14 @@
 // import Header from "@/components/Header/Header.vue";
 
 export default {
+  data(){
+    return{
+      meta:null
+    }
+  },
+  methods:{
+
+  }
     // components:{
     //   appHeader: Header
     // }
