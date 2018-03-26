@@ -17,12 +17,10 @@
       return true;
     },
     name: 'Category',
-    asyncData() {
-      return new Promise((resolve) => {
-        setTimeout(function () {
-          resolve({})
-        }, 1000)
-      })
+    async asyncData ({ store,params }) {
+      return await axios.get('https://xe.vatgia.com/api/rewrites/'+params.category).then(response=>{
+        return store.commit('changeDataHeadPage',{data:response.data.vehilce_feature});
+      });
     },
     data() {
       return {
@@ -37,12 +35,12 @@
       PageHome: PageHome
     },
     watch: {
-      $route: function () {
-        this.getDatacategory();
-      }
+      // $route: function () {
+      //   // this.getDatacategory();
+      // }
     },
     mounted() {
-      this.getDatacategory();
+      // this.getDatacategory();
       this.$nextTick(() => {
         this.$nuxt.$loading.start()
 
@@ -50,19 +48,19 @@
       })
     },
     methods: {
-      getDatacategory() {
-        this.route = this.$route.params.category;
-        let category = this.route;
-        axios.get('https://xe.vatgia.com/api/rewrites/' + category).then(response => {
-          this.head_page = response.data.vehilce_feature;
-          if(this.head_page==null){
-            window.location.href= '/error/404';
-          }
-          this.meta = response.data.meta;
-        }).catch(function(error){
-          window.location= '/error/404';
-        })
-      }
+      // getDatacategory() {
+      //   this.route = this.$route.params.category;
+      //   let category = this.route;
+      //   axios.get('https://xe.vatgia.com/api/rewrites/' + category).then(response => {
+      //     this.head_page = response.data.vehilce_feature;
+      //     if(this.head_page==null){
+      //       window.location.href= '/error/404';
+      //     }
+      //     this.meta = response.data.meta;
+      //   }).catch(function(error){
+      //     window.location= '/error/404';
+      //   })
+      // }
     },
     head () {
       return {

@@ -94,7 +94,7 @@
 
       <div class="box_projects vehicle-feature">
         <div class="projects" role="menu" itemscope="" itemtype="https://schema.org/SiteNavigationElement">
-          <div class="item" v-for="item_feature in feature" :key="item_feature.id">
+          <div class="item" v-for="item_feature in $store.state.data_head_page" :key="item_feature.id">
             <div class="card">
               <a class="img" :title="item_feature.name" :href="'/'+item_feature.link_web">
                 <img onerror="noimage(this)" :alt="item_feature.name" :src="item_feature.photo != null?item_feature.photo.sm:item_feature.no_photo">
@@ -113,16 +113,18 @@
 <script>
   export default {
     name: "HeadPage",
-    props: ['feature'],
+    async asyncData ({ store,params }) {
+      return await axios.get('https://xe.vatgia.com/api/rewrites/'+params.category).then(response=>{
+        return store.commit('changeDataHeadPage',{data:response.data.vehilce_feature});
+      });
+    },
+
     data() {
       return {}
     },
     mounted() {
-      this.getData();
     },
     methods: {
-      getData() {
-      }
     }
   };
 </script>

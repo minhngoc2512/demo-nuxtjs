@@ -85,6 +85,11 @@
   let axios = require('axios')
 export default {
   name: "Header",
+  // async asyncData ({ store,params }) {
+  //   return await axios.get(`https://xe.vatgia.com/api/navigation`).then(response=>{
+  //     return store.commit('changeDataMenu',{data:response.data.data});
+  //   });
+  // },
   data() {
     return {
       menu: {}

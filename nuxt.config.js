@@ -33,6 +33,9 @@ module.exports = {
     '@/assets/css/style.css',
     '@/assets/css/style_all.css'
   ],
+  plugins: [
+    { src: '~plugins/index.js', ssr: false }
+  ],
   // modules: [
   //   '@/modules/js_all.js'
   // ],

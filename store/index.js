@@ -6,6 +6,8 @@ const createStore = () => {
       status_ssr:false,
       status_check:false,
       data_menu: null,
+      data_head_page : null
+
     },
     mutations: {
       changeStatusSsr (state) {
@@ -16,6 +18,9 @@ const createStore = () => {
       },
       changeDataMenu(state,payload){
         state.data_menu = payload.data
+      },
+      changeDataHeadPage(state,payload){
+        state.data_head_page = payload.data
       }
     }
   })

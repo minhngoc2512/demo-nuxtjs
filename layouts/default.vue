@@ -21,9 +21,23 @@
 <script>
   import Header from "@/components/Header/Header.vue";
   import Footer from "@/components/Footer/Footer.vue";
-  let axios = require('axios')
   export default {
     middleware: 'demo',
+    // async asyncData ({ store,params }) {
+    //   // let { data } = await axios.get(`https://xe.vatgia.com/api/navigation`);
+    //   // store.commit('changeDataMenu',{data:response.data.data});
+    //   // store.commit('changeDataMenu',{data:'data_asdf'});
+    //   // return ;
+    // },
+    // async  asyncData ({ params }) {
+    //   let { data } = await axios.get(`https://xe.vatgia.com/api/navigation`);
+    //   // axios
+    //   //   .get("https://xe.vatgia.com/api/navigation")
+    //   //   .then(response => {
+    //   //     console.log(response.data.data);
+    //   //     store.commit('changeDataMenu',{data:response.data.data});
+    //   //   });
+    // },
     data(){
       return{
 
@@ -34,11 +48,11 @@
     },
     methods:{
       getData(){
-          axios
-            .get("https://xe.vatgia.com/api/navigation")
-            .then(response => {
-            this.$store.commit('changeDataMenu',{data:response.data.data});
-            });
+          // axios
+          //   .get("https://xe.vatgia.com/api/navigation")
+          //   .then(response => {
+          //   this.$store.commit('changeDataMenu',{data:response.data.data});
+          //   });
       }
     },
     components: {
